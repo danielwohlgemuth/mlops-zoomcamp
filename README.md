@@ -2,18 +2,14 @@
 
 ## Setup
 
+Setup Anaconda to run Jupyter Notebooks by running the next script. It supports both macOS and Linux.
+
 ```bash
-# Install Anaconda 
-wget https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Linux-x86_64.sh
-# -b           run install in batch mode (without manual intervention),
-#              it is expected the license terms (if any) are agreed upon
-bash Anaconda3-2025.12-2-Linux-x86_64.sh -b
-rm Anaconda3-2025.12-2-Linux-x86_64.sh
+./setup-anaconda.sh
+```
 
-# Add Anaconda executable folder to PATH env var
-echo 'export PATH="/home/codespace/anaconda3/bin:${PATH}"' >> ~/.bashrc
-source ~/.bashrc
+From a new terminal session, start the Jupyter Notebook server.
 
-# Launch Jupyter Notebook
-jupyter notebook
+```bash
+./start-jupyter-notebook.sh
 ```
