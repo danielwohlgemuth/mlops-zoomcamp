@@ -51,3 +51,32 @@ flowchart LR
     monitor --> model
     monitor --> pipeline
 ```
+
+## MLOps Maturity Model
+
+The maturity model defines the common practices that tend to happen at different MLOps adoption stages. It can help assess the current situation and guide towards more automated and better monitored processes.
+
+A more detailed overview can be found at https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/mlops-maturity-model.
+
+0. No MLOps
+    - No automation
+    - All code in Jupyter
+    - Proof of concept
+1. DevOps, No MLOps
+    - Releases are automated
+    - Unit and integration tests
+    - CI/CD
+    - Ops metrics
+    - No experiment tracking
+    - No reproducibility
+    - Data scientist separated from engineers
+2. Automated Training
+    - Training pipeline
+    - Experiment tracking
+    - Model registry
+    - Low friction deployment
+    - Data scientist work with engineers
+3. Automated Deployment
+    - Easy to deploy model
+    - A/B tests
+    - Model monitoring
