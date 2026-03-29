@@ -212,3 +212,4 @@ __marimo__/
 02-experiment-tracking/mlflow.db
 02-experiment-tracking/mlartifacts
 .DS_Store
+02-experiment-tracking/data

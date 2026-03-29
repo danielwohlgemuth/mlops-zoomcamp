@@ -60,6 +60,25 @@ A model related to the run is also registered.
 
 ![Experiment Model Details](/02-experiment-tracking/assets/mlflow-experiments-models-details.png)
 
+Alternatively to the autologging, specific sections can be marked to be recorded as a run.
+Metadata such as tags, parameters, and metrics can also be logged explicitly.
+
+```python
+with mlflow.start_run():
+    mlflow.set_tag('developer', 'daniel')
+    mlflow.log_param('alpha', 0.01)
+
+    # training steps
+
+    mlflow.log_metric('rmse', 5)
+```
+
+See the [duration-prediction](/02-experiment-tracking/duration-prediction.ipynb) notebook for the actual instructions.
+
+The logged information then show up in the experiment run UI, in this example, under metrics, parameters, and tags.
+
+![Manual logging experiment](/02-experiment-tracking/assets/mlflow-experiments-runs-details-manual-logging.png)
+
 ## Conda Setup
 
 Conda is an environemnt manager for Python that helps with keeping package versions isolated from other projects to avoid conflicts. 
