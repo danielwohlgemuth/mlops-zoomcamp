@@ -209,3 +209,6 @@ __marimo__/
 # Custom
 01-intro/*.parquet
 01-intro/models/
+02-experiment-tracking/mlflow.db
+02-experiment-tracking/mlartifacts
+.DS_Store
