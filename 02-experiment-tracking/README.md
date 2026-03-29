@@ -26,7 +26,7 @@ It covers two main areas:
 
 As the Zoomcamp focuses on traditional machine learning workflows, the capabilities of MLflow to manage LLMs and agents will not be explored.
 
-## Setup MLflow
+## MLflow Setup
 
 ```bash
 uvx mlflow server
@@ -59,3 +59,32 @@ A model related to the run is also registered.
 ![Experiment Models](/02-experiment-tracking/assets/mlflow-experiments-models.png)
 
 ![Experiment Model Details](/02-experiment-tracking/assets/mlflow-experiments-models-details.png)
+
+## Conda Setup
+
+Conda is an environemnt manager for Python that helps with keeping package versions isolated from other projects to avoid conflicts. 
+
+### Initialize Conda Config
+
+```bash
+conda init --all # Initialize all currently available shells.
+conda create --name exp-tracking-env
+```
+
+### Activate Conda Environemnt
+
+```bash
+conda activate exp-tracking-env
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Deactivate Conda Environment
+
+```bash
+conda deactivate
+```
