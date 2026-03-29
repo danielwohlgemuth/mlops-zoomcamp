@@ -14,6 +14,30 @@ In a new terminal session, start the Jupyter Notebook server.
 ./start-jupyter-notebook.sh
 ```
 
+## Notebooks
+
+These notebooks explored machine learning concepts using the New York City Taxi and Limousine Commission Trip Record Data.
+
+### [Duration Prediction](/01-intro/duration-prediction.ipynb)
+
+The duration prediction notebook served as an introduction, covering the following actions:
+- Read Parquet files.
+- Visualize the data.
+- Filter out rows.
+- Add a new column.
+- Train linear models on the data.
+- Evaluate prediction errors.
+- Define reusable functions for training and validation.
+
+It used the Green Taxi Trip Records from January and February of 2021
+
+### [Homework](/01-intro/homework.ipynb)
+
+For the homework, the duration prediction was used as a refence to answer the questions
+in the [homework assignment](https://github.com/DataTalksClub/mlops-zoomcamp/blob/main/cohorts/2025/01-intro/homework.md).
+
+It used the Yellow Taxi Trip Records from January and Febraury of 2023.
+
 ## MLOps Pipeline
 
 This is what an ML (Machine Learning) pipeline could look like.
@@ -80,3 +104,7 @@ A more detailed overview can be found at https://learn.microsoft.com/en-us/azure
     - Easy to deploy model
     - A/B tests
     - Model monitoring
+4. Full MLOps Automation
+    - Automated training/retraining
+    - Automated deployment
+    - Fully monitored
