@@ -107,3 +107,33 @@ pip install -r requirements.txt
 ```bash
 conda deactivate
 ```
+
+## Experiment Run
+
+For the experiment run, the [duration-prediction](/02-experiment-tracking/duration-prediction.ipynb) notebook was used, which was based on the notebook of the same name from the [intro](/01-intro/README.md).
+
+Instead of manually trying different training parameters values to find the best model, the [hyperopt](https://hyperopt.github.io/hyperopt/) library was used to perform hyper-parameter optimisation.
+
+The model training was done using the [xgboost](https://xgboost.readthedocs.io/en/stable/) library.
+
+![hyper parameter tunning](/02-experiment-tracking/assets/mlflow-experiments-runs-compare-hyper-parameter-optimisation.png)
+
+After evaluating the first run, the comparison graph showed a lot of lines passing through the lower regions of the parameters. To see if the results could be improved, another experiment with lower parameter values was performed.
+
+![hyper parameter tunning](/02-experiment-tracking/assets/mlflow-experiments-runs-compare-hyper-parameter-optimisation-2.png)
+
+The second run didn't show any meaningful improvement or insights into which tuning parameters affect the training the most.
+
+So the best run was picked and rerun to capture more details and store the model using autolog.
+
+![best run](/02-experiment-tracking/assets/mlflow-experiments-runs-best.png)
+
+The detailed run took longer (8.2 seconds vs. 1.4 seconds) likely due to capturing all the additional information.
+
+![best run overview](/02-experiment-tracking/assets/mlflow-experiments-runs-best-run-overview.png)
+
+![best run metrics](/02-experiment-tracking/assets/mlflow-experiments-runs-best-run-metrics.png)
+
+The model also includes information about the dependencies to be able to reproduce the results later.
+
+![best model artifacts](/02-experiment-tracking/assets/mlflow-experiments-runs-best-model-artifacts.png)
