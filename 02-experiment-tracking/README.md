@@ -125,6 +125,7 @@ After evaluating the first run, the comparison graph showed a lot of lines passi
 The second run didn't show any meaningful improvement or insights into which tuning parameters affect the training the most.
 
 So the best run was picked and rerun to capture more details and store the model using autolog.
+Only some frameworks support autologging. See https://mlflow.org/docs/latest/ml/tracking/autolog/#supported-libraries.
 
 ![best run](/02-experiment-tracking/assets/mlflow-experiments-runs-best.png)
 
