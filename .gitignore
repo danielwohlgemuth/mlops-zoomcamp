@@ -213,3 +213,4 @@ __marimo__/
 02-experiment-tracking/mlartifacts
 .DS_Store
 02-experiment-tracking/data
+02-experiment-tracking/models
