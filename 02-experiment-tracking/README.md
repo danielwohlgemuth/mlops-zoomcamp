@@ -139,6 +139,10 @@ The model also includes information about the dependencies to be able to reprodu
 
 ![best model artifacts](/02-experiment-tracking/assets/mlflow-experiments-runs-best-model-artifacts.png)
 
+Using the artifact uri (the path of a specific artifact but ignoring the last part), the model can be loaded with `mlflow.pyfunc.load_model(logged_model)` or with the model-specific method, e.g. `mlflow.xgboost.load_model(logged_model)`. After that, predictions can be made as usual.
+
+![artifact uri](/02-experiment-tracking/assets/mlflow-experiments-runs-artifact-uri.png)
+
 ## Machine Learning Lifecycle
 
 ```mermaid
