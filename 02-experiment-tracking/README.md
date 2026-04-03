@@ -138,3 +138,59 @@ The detailed run took longer (8.2 seconds vs. 1.4 seconds) likely due to capturi
 The model also includes information about the dependencies to be able to reproduce the results later.
 
 ![best model artifacts](/02-experiment-tracking/assets/mlflow-experiments-runs-best-model-artifacts.png)
+
+## Machine Learning Lifecycle
+
+```mermaid
+%%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
+flowchart LR
+    data_sourcing(Data Sourcing)
+    data_labeling(Data Labeling)
+    data_versioning(Data Versioning)
+    model_architecture(Model Architecture)
+    model_training(Model Training)
+    model_evaluation(Model Evaluation)
+    model_versioning(Model Versioning)
+    model_deployment(Model Deployment)
+    scaling_hardware(Scaling Hardware)
+    prediction_monitoring(Prediction Monitoring)
+
+    subgraph data_management [Data Management]
+        data_sourcing
+        data_labeling
+        data_versioning
+    end
+
+    subgraph mlops [MLOps]
+        data_management
+        model_management
+        prediction_monitoring
+    end
+
+    subgraph model_management [Model Management]
+        experiment_tracking
+        model_versioning
+        model_deployment
+        scaling_hardware
+    end
+
+    subgraph experiment_tracking [Experiment Tracking]
+        model_architecture
+        model_training
+        model_evaluation
+    end
+
+    data_sourcing --> data_labeling
+    data_labeling --> data_versioning
+    data_versioning --> experiment_tracking
+    model_architecture --> model_training
+    model_training --> model_evaluation
+    model_evaluation --> model_architecture
+    experiment_tracking --> model_versioning
+    model_versioning --> model_deployment
+    model_deployment --> prediction_monitoring
+    model_deployment --> scaling_hardware
+    model_deployment --> data_labeling
+```
+
+This diagram is based on the diagram shown in [MLOps Zoomcamp 2.4 - Model management - Youtube](https://www.youtube.com/watch?v=OVUPIX88q88).
