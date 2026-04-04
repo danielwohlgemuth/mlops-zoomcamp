@@ -198,3 +198,11 @@ flowchart LR
 ```
 
 This diagram is based on the diagram shown in [MLOps Zoomcamp 2.4 - Model management - Youtube](https://www.youtube.com/watch?v=OVUPIX88q88).
+
+## Model Registry
+
+When evaluationg with model to promote, these are some of the metrics to consider
+- Training duration
+- Training error
+- Model size
+
