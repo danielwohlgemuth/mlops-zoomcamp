@@ -214,3 +214,5 @@ __marimo__/
 .DS_Store
 02-experiment-tracking/data
 02-experiment-tracking/models
+02-experiment-tracking/running-mlflow-examples/scenario-1-mlflow.db
+02-experiment-tracking/running-mlflow-examples/mlruns
