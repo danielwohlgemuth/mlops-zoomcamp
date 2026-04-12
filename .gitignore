@@ -216,3 +216,5 @@ __marimo__/
 02-experiment-tracking/models
 02-experiment-tracking/running-mlflow-examples/scenario-1-mlflow.db
 02-experiment-tracking/running-mlflow-examples/mlruns
+02-experiment-tracking/running-mlflow-examples/scenario-2-mlflow.db
+02-experiment-tracking/running-mlflow-examples/mlartifacts
