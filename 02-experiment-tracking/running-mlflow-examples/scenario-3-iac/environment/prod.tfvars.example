@@ -1,0 +1,5 @@
+aws_profile            = ""
+environment            = ""
+aws_region             = ""
+terraform_state_bucket = ""
+key_pair_name          = ""
