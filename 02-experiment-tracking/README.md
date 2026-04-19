@@ -29,7 +29,7 @@ As the Zoomcamp focuses on traditional machine learning workflows, the capabilit
 ## MLflow Setup
 
 ```bash
-uvx mlflow server
+uvx mlflow==3.10.1 server
 ```
 
 ![MLflow Home](/02-experiment-tracking/assets/mlflow-home.png)
@@ -201,8 +201,14 @@ This diagram is based on the diagram shown in [MLOps Zoomcamp 2.4 - Model manage
 
 ## Model Registry
 
-When evaluationg with model to promote, these are some of the metrics to consider
+When evaluationg which model to promote, these are some of the metrics to consider
 - Training duration
 - Training error
 - Model size
+
+## MLflow Scenarios
+
+1. A single data scientist participating in an ML competition ([notebook](/02-experiment-tracking/running-mlflow-examples/scenario-1.ipynb))
+2. A cross-functional team with one scientist work on an ML model ([notebook](/02-experiment-tracking/running-mlflow-examples/scenario-2.ipynb))
+3. Multiple data scientists working on multiple ML models ([notebook](/02-experiment-tracking/running-mlflow-examples/scenario-3.ipynb))
 
