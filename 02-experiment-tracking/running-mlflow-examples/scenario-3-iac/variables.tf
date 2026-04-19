@@ -36,3 +36,9 @@ variable "my_ip_v4" {
   nullable    = true
   default     = null
 }
+
+variable "name" {
+  type        = string
+  description = "Default Resouce Name"
+  default     = "mlops"
+}

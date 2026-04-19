@@ -22,6 +22,7 @@ provider "aws" {
     tags = {
       environment = var.environment
       project     = var.project
+      Name        = var.name
     }
   }
 }

@@ -1,9 +1,5 @@
 resource "aws_vpc" "mlops" {
   cidr_block = "10.0.0.0/16"
-
-  tags = {
-    Name = "mlops"
-  }
 }
 
 resource "aws_ec2_tag" "mlops_route_table_name_tag" {
@@ -21,10 +17,6 @@ resource "aws_ec2_tag" "security_group_name_tag" {
 resource "aws_subnet" "mlops" {
   vpc_id     = aws_vpc.mlops.id
   cidr_block = "10.0.1.0/24"
-
-  tags = {
-    Name = "mlops"
-  }
 }
 
 resource "aws_route_table_association" "mlops" {
@@ -34,10 +26,6 @@ resource "aws_route_table_association" "mlops" {
 
 resource "aws_internet_gateway" "mlops" {
   vpc_id = aws_vpc.mlops.id
-
-  tags = {
-    Name = "mlops"
-  }
 }
 
 resource "aws_route" "mlops" {
@@ -59,10 +47,6 @@ resource "aws_security_group_rule" "mlops_ipv4" {
 resource "aws_vpc_endpoint" "mlops" {
   vpc_id       = aws_vpc.mlops.id
   service_name = "com.amazonaws.${var.aws_region}.s3"
-
-  tags = {
-    Name = "mlops"
-  }
 }
 
 resource "aws_vpc_endpoint_route_table_association" "mlops" {
