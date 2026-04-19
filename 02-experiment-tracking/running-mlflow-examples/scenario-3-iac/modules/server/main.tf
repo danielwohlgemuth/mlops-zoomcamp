@@ -23,8 +23,4 @@ resource "aws_instance" "mlops_server" {
   instance_type               = "t3.micro"
   key_name                    = var.key_pair_name
   associate_public_ip_address = true
-
-  tags = {
-    project = "mlops"
-  }
 }

@@ -8,6 +8,11 @@ variable "environment" {
   description = "Environment (prod/dev)"
 }
 
+variable "project" {
+  type        = string
+  description = "Project Name"
+}
+
 variable "aws_region" {
   type        = string
   description = "AWS Region"
@@ -23,4 +28,11 @@ variable "terraform_state_bucket" {
 variable "key_pair_name" {
   type        = string
   description = "EC2 Key Pair Name"
+}
+
+variable "my_ip_v4" {
+  type        = string
+  description = "My IPv4"
+  nullable    = true
+  default     = null
 }

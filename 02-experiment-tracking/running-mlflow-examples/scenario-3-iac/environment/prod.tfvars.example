@@ -1,5 +1,7 @@
 aws_profile            = ""
 environment            = ""
+project                = ""
 aws_region             = ""
 terraform_state_bucket = ""
 key_pair_name          = ""
+my_ip_v4.              = ""
