@@ -1,4 +1,4 @@
-data "aws_ami" "al2023" {
+data "aws_ami" "mlops" {
   most_recent = true
   owners      = ["137112412989"] # Amazon
 
@@ -18,9 +18,11 @@ data "aws_ami" "al2023" {
   }
 }
 
-resource "aws_instance" "mlops_server" {
-  ami                         = data.aws_ami.al2023.id
-  instance_type               = "t3.micro"
+resource "aws_instance" "mlops" {
+  ami                         = data.aws_ami.mlops.id
+  instance_type               = "t2.micro"
   key_name                    = var.key_pair_name
+  subnet_id                   = var.vpc_subnet_id
+  vpc_security_group_ids      = [var.security_group_id]
   associate_public_ip_address = true
 }

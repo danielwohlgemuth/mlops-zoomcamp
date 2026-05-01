@@ -9,3 +9,8 @@ variable "my_ip_v4" {
   nullable    = true
   default     = null
 }
+
+variable "s3_arn" {
+  type        = string
+  description = "MLOps Artifacts S3 ARN"
+}
