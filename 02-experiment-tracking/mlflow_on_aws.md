@@ -23,6 +23,9 @@ flowchart LR
     end
 ```
 
+## Lessons Learned
+- If applying a change fails because an existing resource already exists, the resource can be imported with `tofu import <resource> <id>`
+
 ## Prerequisites
 
 - Tofu
