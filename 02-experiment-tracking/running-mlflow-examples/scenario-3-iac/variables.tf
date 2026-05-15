@@ -48,6 +48,11 @@ variable "server_ami_id" {
   description = "Server AMI Id"
 }
 
+variable "db_name" {
+  type        = string
+  description = "Database Name"
+}
+
 variable "db_engine" {
   type        = string
   description = "Database Engine"
