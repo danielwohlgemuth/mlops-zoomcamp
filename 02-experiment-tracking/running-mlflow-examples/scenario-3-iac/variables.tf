@@ -42,3 +42,40 @@ variable "name" {
   description = "Default Resouce Name"
   default     = "mlops"
 }
+
+variable "server_ami_id" {
+  type        = string
+  description = "Server AMI Id"
+}
+
+variable "db_engine" {
+  type        = string
+  description = "Database Engine"
+}
+
+variable "db_engine_version" {
+  type        = string
+  description = "Database Engine Version"
+}
+
+variable "db_storage" {
+  type        = number
+  description = "Database Storage Space"
+  default     = 10
+}
+
+variable "db_instance_class" {
+  type        = string
+  description = "Database Instance Class"
+}
+
+variable "db_username" {
+  type        = string
+  description = "Database Username"
+}
+
+variable "db_password" {
+  type        = string
+  description = "Database Password"
+  sensitive   = true
+}

@@ -1,3 +1,7 @@
+data "aws_availability_zones" "mlops" {
+  state = "available"
+}
+
 resource "aws_vpc" "mlops" {
   cidr_block = "10.0.0.0/16"
 }
@@ -5,22 +9,34 @@ resource "aws_vpc" "mlops" {
 resource "aws_ec2_tag" "mlops_route_table_name_tag" {
   resource_id = aws_vpc.mlops.default_route_table_id
   key         = "Name"
-  value       = "mlops"
+  value       = var.name
 }
 
 resource "aws_ec2_tag" "mlops_security_group_name_tag" {
   resource_id = aws_vpc.mlops.default_security_group_id
   key         = "Name"
-  value       = "mlops"
+  value       = var.name
 }
 
-resource "aws_subnet" "mlops" {
+resource "aws_subnet" "mlops_1" {
   vpc_id     = aws_vpc.mlops.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = "10.0.3.0/24"
+  availability_zone   = data.aws_availability_zones.mlops.names[0]
 }
 
-resource "aws_route_table_association" "mlops" {
-  subnet_id      = aws_subnet.mlops.id
+resource "aws_subnet" "mlops_2" {
+  vpc_id     = aws_vpc.mlops.id
+  cidr_block = "10.0.4.0/24"
+  availability_zone   = data.aws_availability_zones.mlops.names[1]
+}
+
+resource "aws_route_table_association" "mlops_1" {
+  subnet_id      = aws_subnet.mlops_1.id
+  route_table_id = aws_vpc.mlops.default_route_table_id
+}
+
+resource "aws_route_table_association" "mlops_2" {
+  subnet_id      = aws_subnet.mlops_2.id
   route_table_id = aws_vpc.mlops.default_route_table_id
 }
 

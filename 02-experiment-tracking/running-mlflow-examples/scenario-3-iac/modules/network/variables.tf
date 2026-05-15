@@ -3,6 +3,11 @@ variable "aws_region" {
   description = "AWS Region"
 }
 
+variable "name" {
+  type        = string
+  description = "Default Resouce Name"
+}
+
 variable "my_ip_v4" {
   type        = string
   description = "My IPv4"

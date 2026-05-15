@@ -3,8 +3,13 @@ output "vpc_endpoint_id" {
   description = "VPC Endpoint ID"
 }
 
-output "vpc_subnet_id" {
-  value       = aws_subnet.mlops.id
+output "vpc_subnet_id_1" {
+  value       = aws_subnet.mlops_1.id
+  description = "VPC Subnet ID"
+}
+
+output "vpc_subnet_id_2" {
+  value       = aws_subnet.mlops_2.id
   description = "VPC Subnet ID"
 }
 

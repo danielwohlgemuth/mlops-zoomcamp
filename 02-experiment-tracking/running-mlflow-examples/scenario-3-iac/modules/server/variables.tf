@@ -3,6 +3,11 @@ variable "key_pair_name" {
   description = "EC2 Key Pair Name"
 }
 
+variable "server_ami_id" {
+  type        = string
+  description = "Server AMI Id"
+}
+
 variable "vpc_endpoint_id" {
   type        = string
   description = "VPC Endpoint Id"
