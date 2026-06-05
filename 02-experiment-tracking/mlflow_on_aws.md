@@ -25,11 +25,13 @@ flowchart LR
 
 ## Lessons Learned
 - If applying a change fails because an existing resource already exists, the resource can be imported with `tofu import <resource> <id>`
+- Leaving the name on aws_db_subnet_group unset recreates the resource because the name is randomly generated
 
 ## Prerequisites
 
 - Tofu
 - AWS Account
+- AWS CLI
 
 ## Setup
 
@@ -46,6 +48,15 @@ flowchart LR
 
 Create a `prod.tfvars` file in the [environemnts](/02-experiment-tracking/running-mlflow-examples/scenario-3-iac/environment) folder.
 Use the [prod.tfvars.example](/02-experiment-tracking/running-mlflow-examples/scenario-3-iac/environment/prod.tfvars.example) file as a starting point.
+
+To get the your IP address, run `curl checkip.amazonaws.com`.
+
+To get the latest version of Postgres, run the following.
+
+```bash
+aws rds describe-db-engine-versions --engine postgres --default-only
+```
+
 Then initialize terraform with `tofu init -var-file environment/prod.tfvars`
 
 ### Create a Key Pair
@@ -68,6 +79,21 @@ tofu plan -var-file environment/prod.tfvars
 
 ```bash
 tofu apply -var-file environment/prod.tfvars
+```
+
+### Access Server
+
+Show the output variables
+
+```bash
+tofu refresh -var-file environment/prod.tfvars
+tofu output -var-file environment/prod.tfvars
+```
+
+Then use SSH to expose the MLFlow service locally.
+
+```bash
+ssh -i key-pair.pem -L 5000:localhost:5000 ec2-user@<server_ip>
 ```
 
 ### Cleanup
